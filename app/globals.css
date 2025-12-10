@@ -1,0 +1,220 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Matrimony by Hana - Custom Brand Theme */
+:root {
+  /* Brand Colors */
+  --matrimony-green: #82b29c;
+  --matrimony-green-dark: #6a9a84;
+  --matrimony-green-light: #a5c9b8;
+  --pure-white: #fdfdfd;
+  --soft-cream: #faf8f5;
+  --warm-gray: #9b9b9b;
+  --warm-gray-light: #e8e5e0;
+  --pastel-blush: #f5e6e0;
+  --deep-charcoal: #2d2d2d;
+
+  /* Core Theme */
+  --background: #faf8f5;
+  --foreground: #2d2d2d;
+  --card: rgba(253, 253, 253, 0.8);
+  --card-foreground: #2d2d2d;
+  --popover: rgba(253, 253, 253, 0.95);
+  --popover-foreground: #2d2d2d;
+  --primary: #82b29c;
+  --primary-foreground: #fdfdfd;
+  --secondary: #f5e6e0;
+  --secondary-foreground: #2d2d2d;
+  --muted: #e8e5e0;
+  --muted-foreground: #6b6b6b;
+  --accent: #a5c9b8;
+  --accent-foreground: #2d2d2d;
+  --destructive: #e57373;
+  --destructive-foreground: #fdfdfd;
+  --border: rgba(130, 178, 156, 0.2);
+  --input: rgba(253, 253, 253, 0.9);
+  --ring: #82b29c;
+
+  /* Glass Effect Variables */
+  --glass-bg: rgba(253, 253, 253, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px rgba(130, 178, 156, 0.1);
+
+  --radius: 1rem;
+  --sidebar: rgba(253, 253, 253, 0.9);
+  --sidebar-foreground: #2d2d2d;
+  --sidebar-primary: #82b29c;
+  --sidebar-primary-foreground: #fdfdfd;
+  --sidebar-accent: #f5e6e0;
+  --sidebar-accent-foreground: #2d2d2d;
+  --sidebar-border: rgba(130, 178, 156, 0.15);
+  --sidebar-ring: #82b29c;
+}
+
+.dark {
+  --background: #1a1a1a;
+  --foreground: #fdfdfd;
+  --card: rgba(45, 45, 45, 0.8);
+  --card-foreground: #fdfdfd;
+  --popover: rgba(45, 45, 45, 0.95);
+  --popover-foreground: #fdfdfd;
+  --primary: #82b29c;
+  --primary-foreground: #fdfdfd;
+  --secondary: #3d3d3d;
+  --secondary-foreground: #fdfdfd;
+  --muted: #3d3d3d;
+  --muted-foreground: #9b9b9b;
+  --accent: #6a9a84;
+  --accent-foreground: #fdfdfd;
+  --destructive: #e57373;
+  --destructive-foreground: #fdfdfd;
+  --border: rgba(130, 178, 156, 0.3);
+  --input: rgba(61, 61, 61, 0.9);
+  --ring: #82b29c;
+  --glass-bg: rgba(45, 45, 45, 0.7);
+  --glass-border: rgba(130, 178, 156, 0.3);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --sidebar: rgba(30, 30, 30, 0.9);
+  --sidebar-foreground: #fdfdfd;
+  --sidebar-primary: #82b29c;
+  --sidebar-primary-foreground: #fdfdfd;
+  --sidebar-accent: #3d3d3d;
+  --sidebar-accent-foreground: #fdfdfd;
+  --sidebar-border: rgba(130, 178, 156, 0.2);
+  --sidebar-ring: #82b29c;
+}
+
+@theme inline {
+  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-matrimony-green: var(--matrimony-green);
+  --color-matrimony-green-dark: var(--matrimony-green-dark);
+  --color-matrimony-green-light: var(--matrimony-green-light);
+  --color-pure-white: var(--pure-white);
+  --color-soft-cream: var(--soft-cream);
+  --color-warm-gray: var(--warm-gray);
+  --color-warm-gray-light: var(--warm-gray-light);
+  --color-pastel-blush: var(--pastel-blush);
+  --color-deep-charcoal: var(--deep-charcoal);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 12px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Glassmorphism Utility Classes */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-strong {
+  background: rgba(253, 253, 253, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(130, 178, 156, 0.15);
+}
+
+/* Smooth Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Delay utilities */
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
