@@ -33,47 +33,47 @@ export default function AdminCertificatesPage() {
   const pendingCount = mockCertificates.filter((cert) => !cert.isVerified).length
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Header */}
       <div>
-        <h1 className="font-serif text-3xl font-semibold text-foreground">{t("certificates.adminTitle")}</h1>
-        <p className="text-muted-foreground mt-1">{t("certificates.adminDescription")}</p>
+        <h1 className="font-serif text-2xl sm:text-3xl font-semibold text-foreground">{t("certificates.adminTitle")}</h1>
+        <p className="text-sm sm:text-base text-muted-foreground mt-1">{t("certificates.adminDescription")}</p>
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="glass rounded-2xl p-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-              <Award className="w-6 h-6 text-primary" />
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="glass rounded-2xl p-4 sm:p-6">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <Award className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
             </div>
             <div className="flex-1">
-              <p className="text-sm text-muted-foreground">{t("certificates.totalCertificates")}</p>
-              <p className="text-2xl font-semibold text-foreground">{mockCertificates.length}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">{t("certificates.totalCertificates")}</p>
+              <p className="text-xl sm:text-2xl font-semibold text-foreground">{mockCertificates.length}</p>
             </div>
           </div>
         </div>
 
-        <div className="glass rounded-2xl p-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-              <CheckCircle className="w-6 h-6 text-primary" />
+        <div className="glass rounded-2xl p-4 sm:p-6">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
             </div>
             <div className="flex-1">
-              <p className="text-sm text-muted-foreground">{t("certificates.verified")}</p>
-              <p className="text-2xl font-semibold text-foreground">{verifiedCount}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">{t("certificates.verified")}</p>
+              <p className="text-xl sm:text-2xl font-semibold text-foreground">{verifiedCount}</p>
             </div>
           </div>
         </div>
 
-        <div className="glass rounded-2xl p-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center">
-              <Clock className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />
+        <div className="glass rounded-2xl p-4 sm:p-6">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center">
+              <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-600 dark:text-yellow-400" />
             </div>
             <div className="flex-1">
-              <p className="text-sm text-muted-foreground">{t("certificates.pendingVerification")}</p>
-              <p className="text-2xl font-semibold text-foreground">{pendingCount}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground">{t("certificates.pendingVerification")}</p>
+              <p className="text-xl sm:text-2xl font-semibold text-foreground">{pendingCount}</p>
             </div>
           </div>
         </div>
@@ -81,21 +81,22 @@ export default function AdminCertificatesPage() {
 
       {/* Search and Filter */}
       <div className="glass rounded-2xl p-4">
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
             <Input
               placeholder={t("certificates.searchPlaceholder")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10"
+              className="pl-9 sm:pl-10 text-sm"
             />
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             <Button
               variant={filterStatus === "all" ? "default" : "outline"}
               onClick={() => setFilterStatus("all")}
               size="sm"
+              className="text-xs sm:text-sm"
             >
               All
             </Button>
@@ -103,16 +104,18 @@ export default function AdminCertificatesPage() {
               variant={filterStatus === "verified" ? "default" : "outline"}
               onClick={() => setFilterStatus("verified")}
               size="sm"
+              className="text-xs sm:text-sm"
             >
-              <CheckCircle className="w-4 h-4 mr-2" />
+              <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
               {t("certificates.verified")}
             </Button>
             <Button
               variant={filterStatus === "pending" ? "default" : "outline"}
               onClick={() => setFilterStatus("pending")}
               size="sm"
+              className="text-xs sm:text-sm"
             >
-              <Clock className="w-4 h-4 mr-2" />
+              <Clock className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
               {t("certificates.pending")}
             </Button>
           </div>
