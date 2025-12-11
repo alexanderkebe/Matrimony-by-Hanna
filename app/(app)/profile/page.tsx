@@ -25,6 +25,7 @@ export default function ProfilePage() {
   ]
 
   const menuItems = [
+    { icon: Award, label: "Certificates", href: "/certificates" },
     { icon: User, label: "Edit Profile", href: "/settings/profile" },
     { icon: Users, label: "Couple Settings", href: "/settings/couple" },
     { icon: Church, label: "Church Affiliation", href: "/settings/church" },

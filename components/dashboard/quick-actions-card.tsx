@@ -1,6 +1,6 @@
 "use client"
 
-import { BookOpen, Heart, MessageCircle, Users } from "lucide-react"
+import { BookOpen, Heart, MessageCircle, Users, Award } from "lucide-react"
 import Link from "next/link"
 import { useTranslation } from "@/lib/i18n/context"
 
@@ -12,13 +12,14 @@ export function QuickActionsCard() {
     { href: "/activities", icon: Heart, label: t("nav.activities"), color: "bg-pastel-blush text-deep-charcoal" },
     { href: "/chat", icon: MessageCircle, label: t("nav.chat"), color: "bg-accent/30 text-deep-charcoal" },
     { href: "/community", icon: Users, label: t("nav.community"), color: "bg-secondary text-deep-charcoal" },
+    { href: "/certificates", icon: Award, label: t("profile.certificates"), color: "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400" },
   ]
 
   return (
     <div className="glass rounded-3xl p-5 animate-fade-in-up delay-400">
       <h3 className="font-serif text-lg font-semibold text-foreground mb-4">{t("dashboard.quickActions")}</h3>
 
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
         {actions.map((action) => (
           <Link
             key={action.href}

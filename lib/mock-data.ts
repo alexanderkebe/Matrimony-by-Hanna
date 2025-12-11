@@ -106,6 +106,22 @@ export interface CommunityPost {
   avatar?: string
 }
 
+// Certificate
+export interface Certificate {
+  id: string
+  coupleId: string
+  coupleName: string
+  courseId: string
+  courseTitle: string
+  issuedDate: string
+  certificateNumber: string
+  isVerified: boolean
+  verifiedBy?: string
+  verifiedAt?: string
+  downloadUrl?: string
+  imageUrl?: string
+}
+
 // Mock Current User
 export const mockUser: User = {
   id: "1",
@@ -647,6 +663,60 @@ export const mockCommunityPosts: CommunityPost[] = [
     timestamp: "2024-12-06T09:15:00",
     likes: 21,
     avatar: "/ethiopian-family-children-blessing.jpg",
+  },
+]
+
+// Mock Certificates
+export const mockCertificates: Certificate[] = [
+  {
+    id: "cert-1",
+    coupleId: "couple-1",
+    coupleName: "Sarah & Abraham",
+    courseId: "pre-marriage",
+    courseTitle: "Pre-Marriage",
+    issuedDate: "2024-11-15",
+    certificateNumber: "MBH-PM-2024-001",
+    isVerified: true,
+    verifiedBy: "Deacon Yohannes",
+    verifiedAt: "2024-11-15T10:30:00",
+    imageUrl: "/images/certificate-Abrham-and-Sarah.png",
+  },
+  {
+    id: "cert-2",
+    coupleId: "couple-2",
+    coupleName: "Solomon & Sarah",
+    courseId: "pre-marriage",
+    courseTitle: "Pre-Marriage",
+    issuedDate: "2024-12-01",
+    certificateNumber: "MBH-PM-2024-002",
+    isVerified: true,
+    verifiedBy: "Deacon Yohannes",
+    verifiedAt: "2024-12-01T14:20:00",
+    imageUrl: "/images/certificate-Solomon-and-Sarah.png",
+  },
+  {
+    id: "cert-3",
+    coupleId: "couple-3",
+    coupleName: "Daniel & Ruth",
+    courseId: "marriage",
+    courseTitle: "Marriage",
+    issuedDate: "2024-11-20",
+    certificateNumber: "MBH-M-2024-001",
+    isVerified: true,
+    verifiedBy: "Deacon Yohannes",
+    verifiedAt: "2024-11-20T09:15:00",
+    imageUrl: "/images/certificate-Daniel-and-Ruth.png",
+  },
+  {
+    id: "cert-4",
+    coupleId: "couple-4",
+    coupleName: "Michael & Mary",
+    courseId: "pre-marriage",
+    courseTitle: "Pre-Marriage",
+    issuedDate: "2024-12-05",
+    certificateNumber: "MBH-PM-2024-003",
+    isVerified: false,
+    imageUrl: "/images/certificate-Michael-and- Mary.png",
   },
 ]
 

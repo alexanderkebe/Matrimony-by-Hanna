@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation"
 import Link from "next/link"
-import { LayoutDashboard, Users, CreditCard, BookOpen, Heart, BarChart3, Settings, LogOut } from "lucide-react"
+import { LayoutDashboard, Users, CreditCard, BookOpen, Heart, BarChart3, Settings, LogOut, Award } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Logo } from "@/components/ui/logo"
 
@@ -12,6 +12,7 @@ const adminNavItems = [
   { href: "/admin/payments", icon: CreditCard, label: "Payments" },
   { href: "/admin/courses", icon: BookOpen, label: "Courses" },
   { href: "/admin/activities", icon: Heart, label: "Activities" },
+  { href: "/admin/certificates", icon: Award, label: "Certificates" },
   { href: "/admin/analytics", icon: BarChart3, label: "Analytics" },
   { href: "/admin/settings", icon: Settings, label: "Settings" },
 ]
